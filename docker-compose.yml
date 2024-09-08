@@ -1,0 +1,11 @@
+
+services:
+  broker:
+    image: eclipse-mosquitto
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+    ports:
+      - "1883:1883"
+  bridge:
+    build: .
+    # tty: true
